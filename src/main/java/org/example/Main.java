@@ -17,10 +17,19 @@ public class Main {
         boolean result = canIGiveChange(registerStatus, 100, 9);
         System.out.printf("Result " + result);
 
+        boolean result_ = canIGiveChange(registerStatus, 100, 900);
+        System.out.printf("Result " + result_);
+
     }
 
-    public static boolean canIGiveChange(Map<Integer,Integer> registerStatus, Integer customerPayment, Integer productCost) {
-        // Find desired change amount
+    public static boolean canIGiveChange(
+            Map<Integer,Integer> registerStatus,
+            Integer customerPayment,
+            Integer productCost
+    ) throws Exception {
+        // Find expected change amount
+        Integer expectedChange = customerPayment - productCost;
+        if (expectedChange < 0) throw new Exception("Customer payment is lower then product cost");
         // List available bills -> exclude zeroed
         // Iterate bills
         //      -> in reverse sorting
