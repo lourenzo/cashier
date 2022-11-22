@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
-    public static void main(String ... args) {
-        Map<Integer, Integer> registerStatus = new HashMap<Integer, Integer>();
+    public static void main(String ... args) throws Exception {
+        Map<Integer, Integer> registerStatus = new HashMap<>();
         registerStatus.put(1, 30); // One Dolar, 30 bills;
         registerStatus.put(2, 3); // Two Dolar, 3 bills;
         registerStatus.put(5, 3); // Five Dolar, 3 bills;
