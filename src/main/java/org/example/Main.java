@@ -20,7 +20,13 @@ public class Main {
     }
 
     public static boolean canIGiveChange(Map<Integer,Integer> registerStatus, Integer customerPayment, Integer productCost) {
-
+        // Find desired change amount
+        // List available bills -> exclude zeroed
+        // Iterate bills
+        //      -> in reverse sorting
+        //      -> decrease bill count
+        //      -> sum up used bills
+        // If bills sum equals expected chance amount return true, else return false
         return false;
     }
 }
