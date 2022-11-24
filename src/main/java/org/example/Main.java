@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Main {
@@ -28,9 +29,18 @@ public class Main {
             Integer productCost
     ) throws Exception {
         // Find expected change amount
-        Integer expectedChange = customerPayment - productCost;
+        int expectedChange = customerPayment - productCost;
         if (expectedChange < 0) throw new Exception("Customer payment is lower then product cost");
         // List available bills -> exclude zeroed
+        Object[] availableBills = registerStatus.keySet().stream().sorted().toArray();
+        registerStatus.entrySet().stream().sorted((x, y) -> Integer.compare(y.getKey(), x.getKey())).filter(i -> i.getValue() > 0).toList();
+        List<Map.Entry<Integer, Integer>> xablau = registerStatus.entrySet().stream().sorted((x, y) -> Integer.compare(y.getKey(), x.getKey())).filter(i -> i.getValue() > 0).toList();
+        Map<Integer, Integer> changeBills = new HashMap<>();
+        int collectedChange = 0;
+        int currentChange = expectedChange;
+        xablau.forEach(i -> {
+            if (currentChange % i.getKey() == )
+        });
         // Iterate bills
         //      -> in reverse sorting
         //      -> decrease bill count
